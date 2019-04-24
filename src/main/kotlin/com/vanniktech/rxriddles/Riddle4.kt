@@ -1,6 +1,7 @@
 package com.vanniktech.rxriddles
 
 import io.reactivex.Observable
+import io.reactivex.ObservableEmitter
 
 object Riddle4 {
   /**
@@ -10,6 +11,9 @@ object Riddle4 {
    * Use case: Some button that can toggle two states. For instance a switch between White & Dark theme.
    */
   fun solve(source: Observable<Unit>): Observable<Boolean> {
-    TODO()
+
+    return source.scan(false) {
+      x, y -> !x
+    }
   }
 }
